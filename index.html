@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Cover Letter Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span class="tag">Prodesk IT Sprint 04</span>
+      <h1>AI Cover Letter Generator</h1>
+      <p>
+        A SaaS-style web app that generates professional cover letters using
+        candidate details, job role, company name and skills.
+      </p>
+    </div>
+
+    <div class="main-box">
+
+      <div class="form-box">
+        <h2>Candidate Details</h2>
+
+        <label>Candidate Name</label>
+        <input type="text" id="candidateName" placeholder="Example: Harsh Maurya" />
+
+        <label>Job Role</label>
+        <input type="text" id="jobRole" placeholder="Example: Full Stack Developer Intern" />
+
+        <label>Target Company</label>
+        <input type="text" id="companyName" placeholder="Example: Prodesk IT" />
+
+        <label>Key Skills</label>
+        <textarea id="skills" placeholder="Example: HTML, CSS, JavaScript, React, API Integration"></textarea>
+
+        <label>Experience Level</label>
+        <select id="experienceLevel">
+          <option>Fresher</option>
+          <option>Intern</option>
+          <option>Entry Level</option>
+          <option>Experienced</option>
+        </select>
+
+        <label>Tone</label>
+        <select id="tone">
+          <option>Professional</option>
+          <option>Confident</option>
+          <option>Formal</option>
+          <option>Friendly</option>
+        </select>
+
+        <label>Upload Resume TXT Optional</label>
+        <input type="file" id="resumeFile" accept=".txt" />
+        <p id="resumeStatus"></p>
+
+        <div class="note">
+          API key is not hardcoded. This version works with simulated AI logic.
+        </div>
+
+        <button onclick="generateCoverLetter()">Generate Cover Letter</button>
+      </div>
+
+      <div class="output-box">
+        <div class="output-header">
+          <h2>Generated Output</h2>
+          <button class="copy-btn" onclick="copyLetter()">Copy</button>
+        </div>
+
+        <div id="loading" class="loading">Generating your cover letter...</div>
+
+        <div id="output" class="letter">
+          <p>Your generated cover letter will appear here.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
